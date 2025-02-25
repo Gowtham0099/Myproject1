@@ -3,6 +3,8 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2'
 import * as yup from "yup"
+import "./Login.css";
+
 
 function Login() {
     let navigate=useNavigate()
@@ -21,8 +23,8 @@ function Login() {
     let handleInput=(e)=>{
         setuser({...user,[e.target.name]:e.target.value})
     }
-    let handleSubmit=(e)=>{
-        e.preventDefault()
+    let handleSubmit=()=>{
+    
         let storedUsername = localStorage.getItem("username");
         let storedPassword = localStorage.getItem("password");
         if (user.Username === storedUsername && user.Password === storedPassword) {
@@ -74,7 +76,7 @@ function Login() {
          <button className='su'  type='submit'>login</button>
          
          <br></br>
-         <a className='a' href='#' onClick={(e)=>{e.preventDefault();navigate('/Sigup');}}>Create a account..</a>
+         <p className='a' href='#' onClick={(e)=>{e.preventDefault();navigate('/Sigup');}}>Create a account..</p>
          </div>
          </form>
         )}

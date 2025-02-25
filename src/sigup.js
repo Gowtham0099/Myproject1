@@ -3,8 +3,10 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 // import Swal from 'sweetalert2'
 import * as yup from "yup"
+import "./Sigup.css";
 
-function Signup() {
+
+function Sigup() {
     let navigate=useNavigate()
     let [user, setusername] = useState({
         username: "",
@@ -32,7 +34,7 @@ function Signup() {
     let handleInput = (e) => {
         setusername({ ...user, [e.target.name]: e.target.value })
     }
-    let handleSubmit = (e) => {
+    let handleSubmit = () => {
         // e.preventDefault()
         console.log(user)
         localStorage.setItem("username",user.username)
@@ -42,6 +44,7 @@ function Signup() {
         setusername({
             username: "", newpassword: "", confirmpassword: "", gender: "", gmail: "", phonenumber: ""
         })
+        navigate('/')
     }
 
     
@@ -60,6 +63,7 @@ function Signup() {
                 {({handleSubmit,handleChange})=>(
             <form onSubmit={handleSubmit}>
                 <h1>Signup page.</h1>
+                
                 <h4>Username</h4>
                 
                 <input className='t' type='text' onChange={(e)=>{handleInput(e);handleChange(e)}} name="username" value={user.username} placeholder='Username' />
@@ -91,21 +95,23 @@ function Signup() {
                 {/* <button className='b' href='#' >Submit</button> */}
                 <button className='t' type="button" onClick={handleCancel}>Cancel</button>
                 <p>Already have account?</p>
-                <a href='#' onClick={(e)=>{e.preventDefault();navigate('/')}}>login</a>
+                <p href='#' onClick={(e)=>{e.preventDefault();navigate('/')}}>login</p>
+                
                <br></br>
-                 <a href='#' onClick={(e)=>{e.preventDefault();navigate('/Dashboard')}}>Dashboard</a>
+            
                
 
 
 
-
+             
 
             </form>
             )}
             </Formik>
+            
             </div>
         </div>
     )
 }
 
-export default Signup
+export default Sigup

@@ -1,0 +1,171 @@
+/* Signup.css */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 155vh;
+    margin: 0;
+    padding: 10px; /* Prevents content from touching screen edges */
+}
+
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.sign {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    max-width: 90%; /* Ensures responsiveness on smaller screens */
+    text-align: center;
+}
+
+h1 {
+    color: #444;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+h4 {
+    color: #666;
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+input.t {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+input:focus {
+    border-color: #ff5e62;
+    outline: none;
+    box-shadow: 0px 0px 5px rgba(255, 94, 98, 0.5);
+}
+
+.gender-options {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    flex-wrap: wrap; /* Ensures layout doesn't break on smaller screens */
+}
+
+button.t {
+    width: 100%;
+    background: linear-gradient(to right, #ff9966, #ff5e62);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s;
+    margin-bottom: 10px;
+}
+
+button.cancel-btn {
+    background: gray;
+}
+
+button.t:hover {
+    background: linear-gradient(to right, #ff5e62, #ff9966);
+}
+
+p {
+    font-size: 14px;
+    color: #333;
+}
+
+p.login-link {
+    color: #ff5e62;
+    cursor: pointer;
+}
+
+p.login-link:hover {
+    text-decoration: underline;
+}
+
+.text-danger {
+    color: red;
+    font-size: 12px;
+    text-align: left;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+
+    .page {
+        height: auto;
+        flex-direction: column;
+        padding-top: 20px;
+    }
+
+    .sign {
+        width: 100%;
+        max-width: 350px;
+        padding: 20px;
+    }
+
+    button.t {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    h4 {
+        font-size: 14px;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+    .sign {
+        max-width: 90%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    h4 {
+        font-size: 13px;
+    }
+
+    input.t {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    button.t {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .gender-options {
+        flex-direction: column;
+        align-items: center;
+    }
+}
